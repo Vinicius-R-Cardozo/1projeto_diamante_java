@@ -29,7 +29,7 @@ public class PatientController {
 
     @GetMapping("{id}")
     public ResponseEntity<PatientModels> getPatientById(@PathVariable Long id) {
-        log.info("searching for doctor with {}", id);
+        log.info("searching for patient with {}", id);
         return patientService.getPatientById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
